@@ -1,0 +1,449 @@
+:root {
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: .5rem;
+    padding: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 4rem;
+    max-height: 3.5rem;
+    content: var(--logo);
+}
+
+label {
+    font-size: 1.5rem;
+    display: flex;
+    column-gap: 1rem;
+}
+
+input {
+    height: 3rem;
+    border-radius: .75rem;
+    border: 1px solid #cccccc;
+    outline-color: #0d2240;
+    box-sizing: content-box;
+    padding: 0 .5rem;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+section {
+    margin-top: 1rem;
+}
+
+.signin-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    height: min-content;
+}
+
+#points-counter-container {
+    height: 4rem;
+    aspect-ratio: 1;
+    border-radius: 3rem;
+    background-color: black;
+    color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#points-counter {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.link-text {
+    text-underline-position: below;
+    text-decoration: underline;
+    color: #2866bd;
+    font-weight: bold;
+}
+
+.link-text:active {
+    color: #0d2240;
+}
+
+.signin-button {
+    user-select: none;
+    height: 3rem;
+    border: 0;
+    border-radius: .75rem;
+    background: #FCFCFD;
+    color: #36395a;
+    box-sizing: content-box;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    display: inline-block;
+    outline: 0;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+}
+
+.signin-button:active {
+    box-shadow: inset 0px 3px 7px #d6d6e7;
+    transform: translateY(2px);
+}
+
+.game-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    column-gap: 1rem;
+}
+
+.team-container {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 1rem;
+    padding: .5rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: black;
+    height: 4rem;
+    overflow-x: hidden;
+}
+
+.team-container[data-status='selected'] {
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-weight: 600;
+}
+
+.team-container[data-side='home'] {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.team-container[data-side='away'] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.bet-outcome {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 1rem;
+    padding: .5rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 1rem;
+    color: black;
+    height: 4rem;
+    margin-bottom: 1rem;
+    overflow-x: hidden;
+}
+
+.bet-outcome-icon {
+    font-size: 2.5rem;
+}
+
+.bet-outcome-status {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.bet-outcome-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 1rem;
+}
+
+.bet-outcome[data-status='selected'] {
+    background-color: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.game-container[data-bet='away'] {
+    background-image: linear-gradient(to left, var(--shade), rgba(0,0,0,0) 60%);
+}
+
+.game-container[data-bet='home'] {
+    background-image: linear-gradient(to right, var(--shade), rgba(0,0,0,0) 60%);
+}
+
+.game-info {
+    text-align: center;
+}
+
+.secondary-info {
+    font-weight: normal;
+}
+
+[data-team='DEN'] {
+    --background: #0d2240;
+    --text: #ffc627;
+    --border: #8d2332;
+    --shade: #0d2240;
+    --logo: url('https://upload.wikimedia.org/wikipedia/en/7/76/Denver_Nuggets.svg');
+}
+
+[data-team='DAL'] {
+    --background: #c4ced4;
+    --text: #007dc5;
+    --border: black;
+    --shade: #007dc5;
+    --logo: url('https://upload.wikimedia.org/wikipedia/en/9/97/Dallas_Mavericks_logo.svg');
+}
+
+[data-team='PHO'] {
+--background: #f8a01b;
+--text: black;
+--border: #e46020;
+--shade: #f8a01b;
+--logo: url('https://upload.wikimedia.org/wikipedia/en/d/dc/Phoenix_Suns_logo.svg');
+}
+
+[data-team='LAC'] {
+--background: white;
+--text: #1d428a;
+--border: #c8102e;
+--shade: #c8102e;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/los_angeles_clippers.png');
+}
+
+[data-team='BOS'] {
+--background: white;
+--text: #008248;
+--border: #061922;
+--shade: #008248;
+--logo: url('https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg');
+}
+
+[data-team='BKN'] {
+--background: black;
+--text: white;
+--border: black;
+--shade: black;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/brooklyn_nets.png');
+}
+
+[data-team='NYK'] {
+--background: #f48429;
+--text: #046ab4;
+--border: #046ab4;
+--shade: #f48429;
+--logo: url('https://upload.wikimedia.org/wikipedia/en/2/25/New_York_Knicks_logo.svg');
+}
+
+[data-team='PHI'] {
+--background: white;
+--text: #de1e34;
+--border: #19449c;
+--shade: #19449c;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/philadelphia_76ers.png');
+}
+
+[data-team='TOR'] {
+--background: black;
+--text: #cd1041;
+--border: #cd1041;
+--shade: black;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/toronto_raptors.png');
+}
+
+[data-team='CHI'] {
+--background: #1c2524;
+--text: #d2153a;
+--border: white;
+--shade: #d2153a;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/chicago_bulls.png');
+}
+
+[data-team='CLE'] {
+--background: #84374e;
+--text: #ffc322;
+--border: #ffc322;
+--shade: #84374e;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/cleveland_cavaliers.png');
+}
+
+[data-team='DET'] {
+--background: #c8102e;
+--text: #1d428a;
+--border: #1d428a;
+--shade: #c8102e;
+--logo: url('https://cdn.nba.com/logos/nba/1610612765/global/L/logo.svg');
+}
+
+[data-team='IND'] {
+--background: #fdbb30;
+--text: #002d62;
+--border: #002d62;
+--shade: #fdbb30;
+--logo: url('https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg');
+}
+
+[data-team='MIL'] {
+--background: #00471b;
+--text: #eee1c6;
+--border: #eee1c6;
+--shade: #00471b;
+--logo: url('https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg');
+}
+
+[data-team='ATL'] {
+--background: white;
+--text: #c8102e;
+--border: white;
+--shade: #c8102e;
+--logo: url('https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg');
+}
+
+[data-team='CHA'] {
+--background: #00788c;
+--text: white;
+--border: #1d1160;
+--shade: #00788c;
+--logo: url('https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg');
+}
+
+[data-team='MIA'] {
+--background: #98002e;
+--text: #f9a01b;
+--border: #f9a01b;
+--shade: #98002e;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/miami_heat.png');
+}
+
+[data-team='ORL'] {
+--background: #007dc6;
+--text: #071922;
+--border: #071922;
+--shade: #007dc6;
+--logo: url('https://cdn.bleacherreport.net/images/team_logos/328x328/orlando_magic.png');
+}
+
+[data-team='WAS'] {
+--background: #0d2240;
+--text: #cf0a2c;
+--border: #cf0a2c;
+--shade: #0d2240;
+--logo: url('https://cdn.nba.com/logos/nba/1610612764/global/L/logo.svg');
+}
+
+[data-team="MIN"] {
+    --background: #0c233f;
+    --text: #ffffff;
+    --border: #79bc43;
+    --shade: #266092;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/c/c2/Minnesota_Timberwolves_logo.svg/200px-Minnesota_Timberwolves_logo.svg.png');
+}
+
+[data-team="OKC"] {
+    --background: #002d62;
+    --text: #fdbb30;
+    --border: #ef3b24;
+    --shade: #007ac1;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/5/5d/Oklahoma_City_Thunder.svg/200px-Oklahoma_City_Thunder.svg.png');
+}
+
+[data-team="POR"] {
+    --background: #000000;
+    --text: #ffffff;
+    --border: #e03a3e;
+    --shade: #000000;
+    --logo: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Portland_Trail_Blazers_logo.svg/1024px-Portland_Trail_Blazers_logo.svg.png');
+}
+
+[data-team="UTH"] {
+    --background: #fff21f;
+    --text: #000000;
+    --border: #000000;
+    --shade: #fff21f;
+    --logo: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Portland_Trail_Blazers_logo.svg/1024px-Portland_Trail_Blazers_logo.svg.png');
+}
+
+[data-team="GSW"] {
+    --background: #1d428a;
+    --text: #fdb927;
+    --border: #fdb927;
+    --shade: #1d428a;
+    --logo: url('https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Portland_Trail_Blazers_logo.svg/1024px-Portland_Trail_Blazers_logo.svg.png');
+}
+
+[data-team="LAL"] {
+    --background: #fdb927;
+    --text: #31006f;
+    --border: #31006f;
+    --shade: #fdb927;
+    --logo: url('//upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/220px-Los_Angeles_Lakers_logo.svg.png');
+}
+
+[data-team="SAC"] {
+    --background: #5a2d81;
+    --text: #707271;
+    --border: #000000;
+    --shade: #5a2d81;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/c/c7/SacramentoKings.svg/180px-SacramentoKings.svg.png');
+} 
+
+[data-team="HOU"] {
+    --background: #ce1141;
+    --text: #9ea2a2;
+    --border: #373a36;
+    --shade: #ce1141;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/2/28/Houston_Rockets.svg/170px-Houston_Rockets.svg.png');
+} 
+
+[data-team="MEM"] {
+    --background: #5d76a9;
+    --text: #12173f;
+    --border: #f5b112;
+    --shade: #12173f;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/f/f1/Memphis_Grizzlies.svg/190px-Memphis_Grizzlies.svg.png');
+} 
+
+[data-team="NOP"] {
+    --background: #b9975b;
+    --text: #0c2340;
+    --border: #ce0e2d;
+    --shade: #b9975b;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/0/0d/New_Orleans_Pelicans_logo.svg/230px-New_Orleans_Pelicans_logo.svg.png');
+} 
+
+[data-team="SAS"] {
+    --background: #c4ced4;
+    --text: #000000;
+    --border: #000000;
+    --shade: #fbc8c2;
+    --logo: url('//upload.wikimedia.org/wikipedia/en/thumb/a/a2/San_Antonio_Spurs.svg/240px-San_Antonio_Spurs.svg.png');
+} 
