@@ -4,6 +4,7 @@ import { useSetUser } from "./UserProvider"
 export function SignUpForm({ setIsNewUser })
 {
     const setUser = useSetUser()
+    console.log("Updated signup")
 
     async function requestSignUp()
     {
