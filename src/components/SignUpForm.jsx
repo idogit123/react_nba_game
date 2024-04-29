@@ -4,7 +4,6 @@ import { useSetUser } from "./UserProvider"
 export function SignUpForm({ setIsNewUser })
 {
     const setUser = useSetUser()
-    console.log("Updated signup")
 
     async function requestSignUp()
     {
@@ -13,8 +12,8 @@ export function SignUpForm({ setIsNewUser })
         const displayName = document.getElementById('signup-name').value
         if (displayName == null || displayName.length < 4) 
             return null
-        const { newUser } = await SignUp(email, password, displayName)
-        setUser(newUser)
+        const { user } = await SignUp(email, password, displayName)
+        setUser(user)
     }
 
     function switchToLogin() {

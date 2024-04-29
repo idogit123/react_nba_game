@@ -7,10 +7,12 @@ export function MainSection()
     const user = useUser()
 
     function choosePage() {
-        if (user != null)
-          return <BetsLoader/>
+      if (user != null)
+      {
+        return <BetsLoader/>
+      }
         
-        return <SignInSection/>
+      return <SignInSection/>
     }
 
     return choosePage()
