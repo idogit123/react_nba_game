@@ -41,7 +41,7 @@ export function BetsOutcomes({ pastBets })
     }, [pastBets])
 
     async function getPastGames() {
-        const query = `http://127.0.0.1:8000/past_games`
+        const query = `https://nba-python-api.onrender.com/past_games`
         const response = await fetch(query)
         return JSON.parse(await response.text())
     }

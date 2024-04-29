@@ -7,7 +7,7 @@ export function FutureGames({ initialBets }) {
     const [bets, setBets] = useState([])
 
     async function getFutureGames() {
-        const query = `http://127.0.0.1:8000/future_games`
+        const query = `https://nba-python-api.onrender.com/future_games`
         const response = await fetch(query)
         return JSON.parse(await response.text())
     }
