@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { DeleteBet, LoadBets } from "../supabase_client";
 import { FutureGames } from "./FutureGames";
 import { useState, useMemo } from "react";
-import { BetsOutcomes } from "./BetsOutcomes";
+import { BetOutcomes } from "./BetOutcomes";
 import { useUser } from "./UserProvider";
 
 export function BetsLoader() 
@@ -47,6 +47,6 @@ export function BetsLoader()
 
     return <>
         <FutureGames initialBets={futureBets}/>
-        <BetsOutcomes pastBets={pastBets}/>
+        <BetOutcomes pastBets={pastBets}/>
     </>
 }

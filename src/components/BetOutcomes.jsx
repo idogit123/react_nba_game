@@ -3,7 +3,7 @@ import { BetOutcome } from "./BetOutcome";
 import { UpdatePoints } from "../supabase_client";
 import { useUser, useSetUser } from "./UserProvider";
 
-export function BetsOutcomes({ pastBets }) 
+export function BetOutcomes({ pastBets }) 
 {
     const [games, setGames] = useState([])
     const [bets, setBets] = useState([])
@@ -56,7 +56,7 @@ export function BetsOutcomes({ pastBets })
     }
 
     return <section id="bets-outcomes">
-        <h2>Bets outcomes</h2>
+        <h2>Bet outcomes</h2>
         {bets.length > 0 || <p>You don't have bets.</p>}
         {bets.map(
             (bet) => {
